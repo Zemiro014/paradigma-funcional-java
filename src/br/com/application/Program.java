@@ -1,0 +1,31 @@
+package br.com.application;
+
+import java.util.Arrays;
+
+public class Program {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		int[] valores = {1,2,3,4};
+		
+		// Percorrendo o array acima usando paradigma funcional
+		Arrays.stream(valores)
+				.filter(numero -> numero % 2 == 0)
+				.map(numero -> numero * 2)
+				.forEach(numero -> System.out.println(numero));
+		
+		// Usando  paradigma imperativa
+		for (int i = 0; i < valores.length; i++) {
+			int valor = 0;
+			if(valores[i] % 2 == 0) {
+				valor = valores[i] * 2;
+				
+				if(valor != 0) {
+					System.out.println(valor);
+				}
+			}
+		}
+	}
+
+}
