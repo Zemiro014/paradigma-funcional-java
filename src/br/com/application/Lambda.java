@@ -15,9 +15,13 @@ public class Lambda {
 	public static void main(String[] args) {
 		
 		/*
-		 * Trabalhar com esta forma é bastante verboa. Tu precisa cria a Interface, depois implementar ela e depois criar suas instancias
+		 * Quando você usa o Lambda ele automáticamente saberá qual o tipo de retorno da função 
 		 * */
-		InterfaceFuncional1 function = valor -> valor;
+		InterfaceFuncional1 function = valor -> "Sr. "+ valor; // Pega o valor e retorne ele para concarenado com "Sr."
+		System.out.println(function.gerarString("Jerónimo"));
+		
+		InterfaceFuncional2 function2 = valor -> System.out.println(valor); // Nesta condição não existe retorno. Isso porque o método em questão é "void"
+		function2.gerarString("Jerónimo");
 	}
 }
 
@@ -27,4 +31,9 @@ public class Lambda {
 @FunctionalInterface
 interface InterfaceFuncional1{
 	String gerarString(String valor);
+}
+
+@FunctionalInterface
+interface InterfaceFuncional2{
+	void gerarString(String valor);
 }
